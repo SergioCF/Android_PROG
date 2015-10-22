@@ -2,15 +2,29 @@ package com.example.sergio.helloworld;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends Activity {
 
+    // Etiqueta representativa del proyecto
+    private static final String TAG="Activity Main";
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    protected void onPause(){
+        super.onPause();
+        Log.i(TAG, "Activity Main pasa a segundo plano");
+    }
+
+    protected void onResume(){
+        super.onResume();
+        Log.i(TAG, "Activity Main pasa a primer plano");
     }
 
     @Override
